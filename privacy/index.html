@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy — Rialto</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 42rem; margin: 0 auto; padding: 3rem 1.4rem 5rem;
+    color: #26231f; background: #faf7f2;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ece7e0; background: #17150f; } }
+  h1 { font-size: 1.75rem; margin-bottom: .2rem; }
+  h2 { font-size: 1.12rem; margin-top: 2.5rem; }
+  .meta { opacity: .6; font-size: .9rem; margin-top: 0; }
+  .lead { font-size: 1.05rem; }
+  ul { padding-left: 1.2rem; }
+  li { margin-bottom: .5rem; }
+  table { border-collapse: collapse; width: 100%; margin-top: .8rem; font-size: .93rem; }
+  th, td { text-align: left; padding: .5rem .6rem; border-bottom: 1px solid rgba(128,128,128,.25); vertical-align: top; }
+  th { font-weight: 600; }
+  footer { margin-top: 3.5rem; opacity: .6; font-size: .9rem; }
+</style>
+</head>
+<body>
+
+<h1>Informativa sulla privacy</h1>
+<p class="meta">Rialto · aggiornata il 22 agosto 2026</p>
+
+<p class="lead">Rialto non ha account, non ha server, e chi la
+sviluppa non riceve nessuno dei tuoi dati. I tuoi movimenti stanno sul telefono
+e, se accendi la sincronizzazione, nel <strong>tuo</strong> iCloud: in nessuno
+dei due casi passano da noi. Quello che segue lo dice per esteso, elencando ogni
+singolo momento in cui l'app parla con l'esterno e cosa esattamente le esce di
+mano — perché una promessa del genere va potuta verificare, non creduta.</p>
+
+<h2>Cosa fa l'app</h2>
+<p>Registra le tue spese, i tuoi conti e i tuoi investimenti, e ti dice come
+stai messo. Tutto quello che scrivi resta nel database dell'app sul tuo iPhone,
+protetto dalla cifratura del dispositivo. Non c'è nessuna registrazione, nessun
+profilo utente, nessuna sincronizzazione con un servizio nostro — perché non
+esiste un servizio nostro.</p>
+<p>Se disinstalli l'app, quei dati spariscono con lei. Per questo l'app ti mette
+a portata di mano l'esportazione in CSV e il backup su file: restano tuoi e
+vanno dove decidi tu.</p>
+
+<h2>Dati raccolti</h2>
+<p><strong>Nessuno.</strong> Non raccogliamo dati personali, non abbiamo un
+database di utenti, non riceviamo statistiche d'uso.</p>
+<p>L'app non contiene strumenti di analisi del comportamento: non registra cosa
+apri, quanto ci resti o su cosa tocchi. Non mostra pubblicità, non condivide
+niente con inserzionisti o intermediari, e non usa l'identificativo pubblicitario
+del dispositivo.</p>
+
+<h2>Prezzi di mercato</h2>
+<p>Se registri investimenti e chiedi di aggiornarne il valore, l'app interroga
+dei servizi pubblici di quotazioni. Parte soltanto <strong>l'identificativo
+dello strumento</strong> — il ticker, l'ISIN o il nome, per esempio «VWCE.MI»
+o «bitcoin». Non parte mai quante quote possiedi, quanto vale la tua posizione,
+quanto hai investito, né qualcosa che ti riguardi.</p>
+
+<table>
+  <tr><th>A chi</th><th>Per cosa</th></tr>
+  <tr><td>Yahoo Finance</td><td>Prezzi di ETF e azioni</td></tr>
+  <tr><td>OpenFIGI (Bloomberg)</td><td>Tradurre un ISIN nel simbolo della borsa corrispondente</td></tr>
+  <tr><td>Coinbase</td><td>Quotazioni delle criptovalute</td></tr>
+  <tr><td>gold-api.com</td><td>Prezzi dei metalli preziosi</td></tr>
+  <tr><td>Frankfurter (tassi BCE)</td><td>Cambi valuta per riportare tutto in euro</td></tr>
+</table>
+
+<p>Queste richieste partono solo quando le chiedi tu, aggiornando i prezzi dalla
+schermata del patrimonio. Nessuna posizione è obbligata a seguire un prezzo: il
+valore si può sempre scrivere a mano, e in quel caso l'app non contatta nessuno.</p>
+
+<h2>Intelligenza artificiale</h2>
+<p>Le funzioni che usano un modello linguistico — il coach, la proposta di
+categoria per le spese, la lettura del portafoglio incollato — funzionano solo se
+<strong>colleghi tu</strong> un fornitore e la sua chiave. Non c'è nessuna chiave
+inclusa nell'app e nessun servizio dello sviluppatore in mezzo: le richieste
+partono dal tuo iPhone e vanno direttamente al fornitore che hai scelto.</p>
+<p>Cosa parte, funzione per funzione:</p>
+<ul>
+  <li><strong>Coach.</strong> Non l'elenco dei tuoi movimenti, ma un riepilogo di
+      totali. L'app te lo mostra per intero prima che tu lo usi, alla voce
+      <em>Cosa sa di me</em>: quello che leggi lì è esattamente quello che esce,
+      parola per parola.</li>
+  <li><strong>Categoria di una spesa.</strong> Solo il nome dell'esercente. Mai
+      l'importo, mai la data, mai il conto. È un'impostazione, e si può
+      restringere ulteriormente o spegnere.</li>
+  <li><strong>Lettura del portafoglio.</strong> Il testo che incolli tu, e i nomi
+      delle posizioni che hai registrato, perché servono ad abbinarli. Parte solo
+      quando premi il pulsante.</li>
+</ul>
+<p>Da quel momento valgono l'informativa e le condizioni del fornitore che hai
+scelto. Se preferisci che non esca niente, l'app supporta i modelli che girano
+sul dispositivo o su un computer della tua rete di casa, e c'è un interruttore
+che spegne del tutto le chiamate di rete verso i modelli.</p>
+<p>La chiave che inserisci sta nel Portachiavi di iOS, accessibile solo a questa
+app e solo su questo dispositivo: non finisce nemmeno nel backup di iCloud.</p>
+
+<h2>Blocco, PIN e riconoscimento biometrico</h2>
+<p>Il PIN non viene salvato. Nel Portachiavi finisce una sua impronta
+crittografica, con un sale casuale: da un'impronta non si risale al PIN, e per
+questo se lo dimentichi non lo può recuperare nessuno — nemmeno noi.</p>
+<p>Face ID e Touch ID passano dal sistema operativo. L'app riceve soltanto un sì
+o un no: i tuoi dati biometrici non le vengono mai consegnati, restano dentro il
+processore sicuro dell'iPhone e non escono dal dispositivo in nessuna forma.</p>
+
+<h2>Registrazione automatica delle spese</h2>
+<p>Se costruisci la scorciatoia con l'app Comandi Rapidi, quando paghi con Apple
+Pay il sistema passa all'app l'importo, il nome dell'esercente e la dicitura
+della carta. Quei dati arrivano dal tuo iPhone e restano sul tuo iPhone: vengono
+scritti nel database locale e non escono da lì. L'abbinamento al conto giusto e
+la categoria li decide l'app, sul dispositivo, con le regole che ha imparato
+dalle tue correzioni.</p>
+
+<h2>Sincronizzazione con iCloud</h2>
+<p>Se sul telefono iCloud è acceso, l'app tiene i tuoi dati allineati fra i
+dispositivi dove hai fatto l'accesso con lo stesso ID Apple. Serve a due cose:
+ritrovare i conti sull'iPad senza riscriverli, e non perdere niente quando cambi
+telefono.</p>
+<p><strong>Dove finiscono.</strong> In un'area privata del tuo spazio iCloud,
+sotto il tuo ID Apple. Non su un nostro server: un nostro server non esiste. Chi
+sviluppa l'app non può leggerli, non può elencarli e non sa nemmeno quante
+persone stiano sincronizzando. Il trasporto e la custodia sono di Apple e
+seguono le sue condizioni.</p>
+<p><strong>Cosa viene sincronizzato.</strong> Gli stessi dati che stanno
+nell'app: conti, movimenti, categorie, spese fisse, posizioni del patrimonio,
+obiettivi. <em>Non</em> le chiavi dei modelli di intelligenza artificiale, che
+restano nel portachiavi di questo dispositivo e non escono da qui.</p>
+<p><strong>Come si spegne.</strong> Da Impostazioni di iOS → il tuo nome →
+iCloud → App che usano iCloud, togliendo Rialto. L'app continua a funzionare
+esattamente come prima, con i dati sul solo telefono. Anche senza iCloud, o con
+lo spazio esaurito, l'app si apre e lavora normalmente: la sincronizzazione è un
+di più, non una condizione.</p>
+<p><strong>Come si cancellano.</strong> Cancellare i dati dell'app da
+Impostazioni → iCloud rimuove la copia sincronizzata. Quella sul telefono si
+cancella disinstallando l'app.</p>
+
+<h2>Backup ed esportazione</h2>
+<p>Il backup è un file che scrivi tu, dove vuoi tu, con i mezzi del sistema
+operativo. Non passa da nessun servizio nostro e non viene caricato da nessuna
+parte: se lo metti su iCloud Drive o lo mandi via email, sei tu a deciderlo, e
+valgono le condizioni di chi lo custodisce. Lo stesso vale per l'esportazione in
+CSV.</p>
+<p>Il backup automatico dell'iPhone include il database dell'app, come per
+qualunque altra app: è gestito interamente da Apple secondo le sue condizioni.</p>
+
+<h2>Notifiche</h2>
+<p>Le uniche notifiche sono quelle che accendi tu, e riguardano soldi in arrivo —
+la cedola di un'obbligazione il giorno prima dello stacco. Sono programmate in
+locale sul dispositivo: non passano da nessun server, e nessuno sa che le
+riceverai, perché non c'è nessun server.</p>
+
+<h2>Acquisti</h2>
+<p>Gli acquisti e gli abbonamenti sono gestiti interamente da Apple. Non
+riceviamo né trattiamo i tuoi dati di pagamento: l'app sa soltanto, chiedendolo
+al dispositivo, se un acquisto risulta valido.</p>
+
+<h2>Minori</h2>
+<p>L'app non è rivolta a minori di 13 anni e non raccoglie consapevolmente dati
+di minori. Non raccogliendo dati da nessuno, non ne raccoglie da loro.</p>
+
+<h2>I tuoi diritti</h2>
+<p>Il Regolamento europeo riconosce diritti di accesso, rettifica, portabilità e
+cancellazione nei confronti di chi tratta i tuoi dati. Qui la risposta è
+strutturale invece che procedurale: non trattiamo nessun dato personale, quindi
+non c'è niente da chiederci di mostrare o cancellare.</p>
+<p>I dati sono già tutti in mano tua, sul tuo dispositivo: li consulti aprendo
+l'app, li porti via in CSV o con il file di backup, li cancelli dalla voce
+apposita nelle impostazioni oppure disinstallando l'app.</p>
+
+<h2>Modifiche</h2>
+<p>Se questa informativa cambierà, cambierà con lei la data in alto, e la
+versione dell'app che introduce il cambiamento lo dirà nelle note di
+aggiornamento.</p>
+
+<h2>Contatti</h2>
+<p>Per qualsiasi domanda: <a href="mailto:nicomari29@gmail.com">nicomari29@gmail.com</a></p>
+
+<footer>Titolare del trattamento: Nicolò Marinangeli</footer>
+
+</body>
+</html>
