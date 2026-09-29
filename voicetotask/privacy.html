@@ -24,7 +24,7 @@ a { color:inherit; }
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="updated">VoiceToTask — aggiornata il 27 agosto 2026</p>
+<p class="updated">VoiceToTask — aggiornata il 30 settembre 2026</p>
 
 <p class="lead">VoiceToTask non raccoglie i tuoi dati. Non abbiamo server, non abbiamo account, non sappiamo chi sei. Questa pagina spiega dove finisce quello che dici all'app.</p>
 
@@ -41,14 +41,23 @@ a { color:inherit; }
 
 <ul>
   <li><strong>Trascrizione.</strong> Avviene sul dispositivo. Se per la lingua scelta manca il modello di riconoscimento locale, iOS invia l'audio ai server di Apple per trascriverlo: è il riconoscimento vocale di sistema, regolato dall'informativa di Apple. La scheda di ogni registrazione dice quale dei due percorsi è stato usato.</li>
-  <li><strong>Analisi AI.</strong> Se scegli un motore cloud (OpenAI, Anthropic, Google o un endpoint compatibile), il <em>testo</em> della trascrizione viene inviato direttamente dal tuo iPhone a quel fornitore, con la tua chiave. Non passa da noi. Il trattamento è regolato dall'informativa del fornitore che hai scelto. Se usi Apple Intelligence, l'analisi resta sul dispositivo.</li>
+  <li><strong>Motore AI nel cloud.</strong> Se scegli un motore cloud (Anthropic, OpenAI, Google o un endpoint compatibile), i dati vanno direttamente dal tuo iPhone a quel fornitore, con la tua chiave. Non passano da noi. Il trattamento è regolato dall'informativa del fornitore che hai scelto. Se usi Apple Intelligence, tutto resta sul dispositivo.</li>
 </ul>
 
-<p>L'audio non viene mai inviato a un motore AI: solo il testo già trascritto.</p>
+<p>Cosa riceve il motore cloud, a seconda di quello che fai:</p>
+<ul>
+  <li><strong>Analisi di una registrazione</strong>: il testo della trascrizione, e un elenco di nomi presi dalle tue note (persone, parole dei titoli, il vocabolario che hai insegnato all'app), al massimo quaranta, perché li scriva giusti.</li>
+  <li><strong>«Chiedi a questa registrazione»</strong>: la tua domanda e la trascrizione di quella registrazione.</li>
+  <li><strong>Ricerca per significato</strong>: la tua ricerca e brevi estratti delle registrazioni più recenti (titoli, inizio delle trascrizioni, riassunti, task, segnalibri).</li>
+</ul>
+
+<p>Se autorizzi il ripiego a pagamento, quando il motore scelto non risponde gli stessi dati possono andare anche agli altri motori cloud che hai configurato. L'app lo dice nel punto in cui si attiva.</p>
+
+<p>L'audio non viene mai inviato a un motore AI: solo testo.</p>
 
 <h2>Nessun tracciamento</h2>
 
-<p>L'app non raccoglie statistiche d'uso di nessun tipo. Non traccia fra app o siti, non contiene SDK pubblicitari o di analisi di terze parti, non crea identificatori pubblicitari e non condivide nulla con inserzionisti o data broker.</p>
+<p>L'app non raccoglie statistiche d'uso: non ci manda niente. Tiene per te, fra i tuoi dati, un conteggio delle richieste fatte ai motori AI e dei token usati (la schermata «Utilizzo»), perché tu sappia quanto spendi con la tua chiave; con iCloud attivo sta nel tuo database privato come il resto. Non traccia fra app o siti, non contiene SDK pubblicitari o di analisi di terze parti, non crea identificatori pubblicitari e non condivide nulla con inserzionisti o data broker.</p>
 
 <h2>iCloud</h2>
 
@@ -64,7 +73,7 @@ a { color:inherit; }
 
 <p>Quando accetti un orario proposto per un task, l'app aggiunge quell'evento al tuo calendario. Il permesso richiesto è di <strong>sola scrittura</strong>: l'app può creare eventi e non può leggere quelli che ci sono già. È il motivo per cui una proposta d'orario non dice mai che quell'ora è libera — non può saperlo.</p>
 
-<p>Le notifiche sono programmate localmente da iOS: non passano da un server.</p>
+<p>Le notifiche sono programmate localmente da iOS: non passano da un server. Anche «Fatto» e «Rimanda» su una notifica lavorano solo sul dispositivo.</p>
 
 <h2>Acquisti</h2>
 
@@ -76,7 +85,13 @@ a { color:inherit; }
 
 <h2>Cancellazione</h2>
 
-<p>Eliminando una registrazione spariscono audio, trascrizione, analisi e task collegati. Disinstallando l'app sparisce tutto, chiavi comprese. Non essendoci un account, non c'è niente da chiederci di cancellare.</p>
+<p>Eliminando una registrazione spariscono audio, trascrizione, analisi e task collegati, sul dispositivo e — con iCloud attivo — anche nel tuo iCloud e sugli altri tuoi apparecchi. Il promemoria creato per un task se ne va con lui. L'evento aggiunto al calendario invece resta: con il permesso di sola scrittura l'app non può toglierlo, lo elimini da Calendario.</p>
+
+<p>Disinstallare l'app toglie i dati da questo dispositivo, ma non da iCloud: la copia nel tuo database privato resta, e torna se reinstalli. Per cancellarla: Impostazioni di iOS → il tuo nome → iCloud → Gestisci lo spazio → VoiceToTask → elimina i dati.</p>
+
+<p>Le chiavi API possono sopravvivere alla disinstallazione, perché iOS conserva il Portachiavi. Per toglierle, elimina il motore nell'app (Tu → Motore AI) prima di disinstallarla: con il motore se ne va anche la sua chiave.</p>
+
+<p>Non essendoci un account, non c'è niente da chiederci di cancellare.</p>
 
 <h2>I tuoi diritti</h2>
 
@@ -93,7 +108,7 @@ a { color:inherit; }
 <hr>
 
 <h1>Privacy Policy</h1>
-<p class="updated">VoiceToTask — last updated 27 August 2026</p>
+<p class="updated">VoiceToTask — last updated 30 September 2026</p>
 
 <p class="lead">VoiceToTask does not collect your data. We run no servers, there are no accounts, and we do not know who you are. This page explains where the things you say to the app end up.</p>
 
@@ -110,14 +125,23 @@ a { color:inherit; }
 
 <ul>
   <li><strong>Transcription.</strong> Runs on device. If the local recognition model is not available for the chosen language, iOS sends the audio to Apple's servers to transcribe it: this is the system speech recognition, governed by Apple's own privacy policy. Each recording's page states which of the two paths was used.</li>
-  <li><strong>AI analysis.</strong> If you choose a cloud engine (OpenAI, Anthropic, Google, or a compatible endpoint), the transcript <em>text</em> is sent straight from your iPhone to that provider, using your key. It does not pass through us. Processing is governed by the policy of the provider you chose. With Apple Intelligence, analysis stays on device.</li>
+  <li><strong>Cloud AI engine.</strong> If you choose a cloud engine (Anthropic, OpenAI, Google, or a compatible endpoint), data goes straight from your iPhone to that provider, using your key. It does not pass through us. Processing is governed by the policy of the provider you chose. With Apple Intelligence, everything stays on device.</li>
 </ul>
 
-<p>Audio is never sent to an AI engine: only the already-transcribed text.</p>
+<p>What the cloud engine receives, depending on what you do:</p>
+<ul>
+  <li><strong>Analysing a recording</strong>: the transcript text, plus a list of names taken from your notes (people, words from titles, the vocabulary you taught the app), forty at most, so that it spells them right.</li>
+  <li><strong>"Ask this recording"</strong>: your question and that recording's transcript.</li>
+  <li><strong>Search by meaning</strong>: your search and short excerpts from your most recent recordings (titles, the start of transcripts, summaries, tasks, bookmarks).</li>
+</ul>
+
+<p>If you allow the paid fallback, when your chosen engine does not answer the same data can also go to the other cloud engines you have set up. The app says so where you turn it on.</p>
+
+<p>Audio is never sent to an AI engine: text only.</p>
 
 <h2>No tracking</h2>
 
-<p>The app collects no usage statistics of any kind. It does not track across apps or websites, contains no third-party advertising or analytics SDKs, creates no advertising identifiers, and shares nothing with advertisers or data brokers.</p>
+<p>The app collects no usage statistics: it sends us nothing. For you, among your own data, it keeps a count of the requests made to AI engines and the tokens used (the "Usage" screen), so you know what you spend with your key; with iCloud on it sits in your private database like everything else. It does not track across apps or websites, contains no third-party advertising or analytics SDKs, creates no advertising identifiers, and shares nothing with advertisers or data brokers.</p>
 
 <h2>iCloud</h2>
 
@@ -133,7 +157,7 @@ a { color:inherit; }
 
 <p>When you accept a suggested time for a task, the app adds that event to your calendar. The permission it asks for is <strong>write-only</strong>: it can create events and cannot read the ones already there. That is why a suggested time never claims the slot is free — the app cannot know.</p>
 
-<p>Notifications are scheduled locally by iOS: no server is involved.</p>
+<p>Notifications are scheduled locally by iOS: no server is involved. "Done" and "Postpone" on a notification also work on the device only.</p>
 
 <h2>Purchases</h2>
 
@@ -145,7 +169,13 @@ a { color:inherit; }
 
 <h2>Deletion</h2>
 
-<p>Deleting a recording removes its audio, transcript, analysis and linked tasks. Deleting the app removes everything, keys included. With no account, there is nothing to ask us to delete.</p>
+<p>Deleting a recording removes its audio, transcript, analysis and linked tasks, on the device and — with iCloud on — in your iCloud and on your other devices too. The reminder created for a task goes with it. An event added to your calendar stays: with write-only access the app cannot remove it, so delete it in Calendar.</p>
+
+<p>Deleting the app removes the data from this device, but not from iCloud: the copy in your private database stays, and comes back if you reinstall. To erase it: iOS Settings → your name → iCloud → Manage Storage → VoiceToTask → delete the data.</p>
+
+<p>API keys can survive deleting the app, because iOS keeps the Keychain. To remove them, delete the engine in the app (You → AI engine) before deleting the app: the engine's key goes with it.</p>
+
+<p>With no account, there is nothing to ask us to delete.</p>
 
 <h2>Your rights</h2>
 
