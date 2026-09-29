@@ -27,7 +27,7 @@
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="meta">Rialto · aggiornata il 24 agosto 2026</p>
+<p class="meta">Rialto · aggiornata il 29 settembre 2026</p>
 
 <p class="lead">Rialto non ha account, non ha server, e chi la
 sviluppa non riceve nessuno dei tuoi dati. I tuoi movimenti stanno sul telefono
@@ -86,12 +86,36 @@ partono dal tuo iPhone e vanno direttamente al fornitore che hai scelto.</p>
       totali. L'app te lo mostra per intero prima che tu lo usi, alla voce
       <em>Cosa sa di me</em>: quello che leggi lì è esattamente quello che esce,
       parola per parola.</li>
-  <li><strong>Categoria di una spesa.</strong> Solo il nome dell'esercente. Mai
-      l'importo, mai la data, mai il conto. È un'impostazione, e si può
-      restringere ulteriormente o spegnere.</li>
+  <li><strong>Categoria di una spesa.</strong> Il nome dell'esercente e l'elenco
+      delle tue categorie; la nota che hai scritto sulla spesa solo se lo permetti
+      nelle impostazioni; e, se l'interruttore è acceso, il nome della città in cui
+      sei (vedi sotto). Mai l'importo, mai la data, mai il conto. Si può spegnere
+      del tutto.</li>
   <li><strong>Lettura del portafoglio.</strong> Il testo che incolli tu, e i nomi
       delle posizioni che hai registrato, perché servono ad abbinarli. Parte solo
       quando premi il pulsante.</li>
+</ul>
+<p><strong>La città in cui sei.</strong> Un negozio con un nome proprio —
+«Camelia», «Da Gino» — esiste in molte città, e cercato insieme alla città si
+trova quello giusto. Per questo, quando l'AI deve riconoscere un esercente, l'app
+può aggiungere al nome la città in cui ti trovi. Funziona così:</p>
+<ul>
+  <li>serve il permesso della posizione «mentre usi l'app», che iOS ti chiede la
+      prima volta che l'AI ne ha bisogno con te davanti allo schermo. Se non lo
+      dai, la città non parte e tutto il resto funziona uguale;</li>
+  <li>l'app chiede a iOS una posizione <strong>approssimativa</strong>, al
+      chilometro, e la passa al servizio di Apple Mappe per ricavarne il nome del
+      comune (con la sigla della provincia, quando c'è). Quel passaggio è di Apple
+      e segue le sue condizioni;</li>
+  <li>al fornitore AI arriva <strong>soltanto il nome della città</strong>,
+      accanto al nome del negozio: mai le coordinate, mai un indirizzo;</li>
+  <li>sul telefono l'app tiene un breve diario delle città delle ultime 48 ore,
+      così una spesa registrata pochi minuti fa porta la città del momento in cui
+      l'hai fatta. Il diario resta sul telefono, non si sincronizza con iCloud,
+      e si cancella spegnendo l'interruttore o con «Cancella tutto»;</li>
+  <li>si spegne da <em>Impostazioni → Intelligenza → Aggiungi la città in cui
+      sei</em>, oppure togliendo il permesso da <em>Impostazioni di iOS → Privacy
+      e sicurezza → Localizzazione → Rialto</em>.</li>
 </ul>
 <p>Da quel momento valgono l'informativa e le condizioni del fornitore che hai
 scelto. Se preferisci che non esca niente, l'app supporta i modelli che girano
@@ -145,8 +169,14 @@ operativo. Non passa da nessun servizio nostro e non viene caricato da nessuna
 parte: se lo metti su iCloud Drive o lo mandi via email, sei tu a deciderlo, e
 valgono le condizioni di chi lo custodisce. Lo stesso vale per l'esportazione in
 CSV.</p>
-<p>Il backup automatico dell'iPhone include il database dell'app, come per
-qualunque altra app: è gestito interamente da Apple secondo le sue condizioni.</p>
+<p>Se accendi il <strong>backup automatico</strong> di Rialto, l'app scrive da
+sola lo stesso file nella sua cartella privata sul telefono, con la cadenza che
+scegli, e ne tiene le ultime dieci copie. Non compaiono nell'app File: le
+ripristini o le condividi dalla schermata del backup, dietro il blocco dell'app.
+Se usi «Non ricordo il codice», vengono cancellate insieme ai dati.</p>
+<p>Il backup automatico dell'iPhone include il database dell'app e queste copie,
+come per qualunque altra app: è gestito interamente da Apple secondo le sue
+condizioni.</p>
 
 <h2>Notifiche</h2>
 <p>Le uniche notifiche sono quelle che accendi tu, e riguardano soldi in arrivo —
@@ -160,12 +190,15 @@ riceviamo né trattiamo i tuoi dati di pagamento: l'app sa soltanto, chiedendolo
 al dispositivo, se un acquisto risulta valido.</p>
 
 <h2>Terzi che ricevono dati</h2>
-<p>I servizi elencati qui sopra — le fonti dei prezzi di mercato e, solo se lo
-colleghi tu con una tua chiave, il fornitore di intelligenza artificiale — sono
-gli unici destinatari possibili di una richiesta partita da Rialto. Alle fonti
-dei prezzi arriva un simbolo, non un dato che ti riguardi. Al fornitore AI, se
-ne hai attivato uno, arriva soltanto la parte di numeri necessaria alla domanda
-che hai scritto, e ci arriva sotto il tuo contratto con lui, con la tua chiave.</p>
+<p>I servizi elencati qui sopra — le fonti dei prezzi di mercato, Apple Mappe
+per il nome della città e, solo se lo colleghi tu con una tua chiave, il
+fornitore di intelligenza artificiale — sono gli unici destinatari possibili di
+una richiesta partita da Rialto. Alle fonti dei prezzi arriva un simbolo, non un
+dato che ti riguardi. Ad Apple Mappe arriva una posizione approssimativa, e solo
+se hai dato il permesso. Al fornitore AI, se ne hai attivato uno, arriva soltanto
+quello che serve alla domanda — i nomi dei negozi, la città se lo permetti, o la
+parte di numeri necessaria alla domanda che hai scritto — e ci arriva sotto il
+tuo contratto con lui, con la tua chiave.</p>
 <p>Non condividiamo dati personali con nessun altro: niente reti pubblicitarie,
 niente strumenti di analisi, nessuna società collegata. Nella misura in cui un
 dato dovesse passare da uno di quei servizi, siamo tenuti a chiedere e ci
@@ -188,10 +221,12 @@ trattenere: non abbiamo una copia.</p>
 tu, e si spegne con lo stesso interruttore con cui l'hai accesa.</p>
 <p>L'intelligenza artificiale di un fornitore esterno si disattiva togliendo la
 chiave da <em>Impostazioni → Intelligenza</em>: da quel momento non parte più
-nessuna richiesta. L'aggiornamento dei prezzi si ferma smettendo di richiederlo.
+nessuna richiesta. La città si toglie dallo stesso posto, con l'interruttore
+<em>Aggiungi la città in cui sei</em>, o togliendo il permesso della posizione
+dalle impostazioni di iOS. L'aggiornamento dei prezzi si ferma smettendo di richiederlo.
 La sincronizzazione si revoca da <em>Impostazioni di iOS → il tuo nome →
-iCloud</em>. La fotocamera, la rete locale e Siri si revocano dalle impostazioni
-di iOS come per qualunque altra app. Revocare un permesso non ti fa perdere
+iCloud</em>. La fotocamera, la posizione, la rete locale e Siri si revocano dalle
+impostazioni di iOS come per qualunque altra app. Revocare un permesso non ti fa perdere
 niente di quello che hai già scritto: smette solo di funzionare quella parte.</p>
 
 <h2>Minori</h2>
