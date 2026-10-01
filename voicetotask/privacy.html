@@ -24,13 +24,13 @@ a { color:inherit; }
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="updated">VoiceToTask — aggiornata il 30 settembre 2026</p>
+<p class="updated">VoiceToTask — aggiornata il 1° ottobre 2026</p>
 
 <p class="lead">VoiceToTask non raccoglie i tuoi dati. Non abbiamo server, non abbiamo account, non sappiamo chi sei. Questa pagina spiega dove finisce quello che dici all'app.</p>
 
 <h2>Cosa resta sul tuo iPhone</h2>
 <ul>
-  <li><strong>Le registrazioni audio.</strong> Salvate nell'area dell'app sul dispositivo, e — se iCloud è attivo — nel tuo iCloud privato. A noi non arrivano mai.</li>
+  <li><strong>Le registrazioni audio.</strong> Salvate nell'area dell'app sul dispositivo, e — se iCloud è attivo — nel tuo iCloud privato. A noi non arrivano mai; a un fornitore di trascrizione solo se lo scegli tu (vedi sotto).</li>
   <li><strong>Le trascrizioni, i task, le scadenze, i riassunti.</strong> In un database locale.</li>
   <li><strong>Le tue chiavi API.</strong> Nel Portachiavi di iOS. L'app non le invia mai a noi né a terzi diversi dal fornitore a cui appartengono.</li>
 </ul>
@@ -40,7 +40,7 @@ a { color:inherit; }
 <p>Succede in due casi, entrambi sotto il tuo controllo.</p>
 
 <ul>
-  <li><strong>Trascrizione.</strong> Avviene sul dispositivo. Se per la lingua scelta manca il modello di riconoscimento locale, iOS invia l'audio ai server di Apple per trascriverlo: è il riconoscimento vocale di sistema, regolato dall'informativa di Apple. La scheda di ogni registrazione dice quale dei due percorsi è stato usato.</li>
+  <li><strong>Trascrizione.</strong> Avviene sul dispositivo. Se per la lingua scelta manca il modello di riconoscimento locale, iOS invia l'audio ai server di Apple per trascriverlo: è il riconoscimento vocale di sistema, regolato dall'informativa di Apple. Se invece in Impostazioni scegli di far trascrivere a OpenAI o a Google (utile per dialetti e audio difficile), oppure lo chiedi per una sola registrazione, l'audio va a quel fornitore, con la tua chiave, dopo un avviso che te lo dice. La scheda di ogni registrazione dice quale percorso è stato usato.</li>
   <li><strong>Motore AI nel cloud.</strong> Se scegli un motore cloud (Anthropic, OpenAI, Google o un endpoint compatibile), i dati vanno direttamente dal tuo iPhone a quel fornitore, con la tua chiave. Non passano da noi. Il trattamento è regolato dall'informativa del fornitore che hai scelto. Se usi Apple Intelligence, tutto resta sul dispositivo.</li>
 </ul>
 
@@ -53,7 +53,7 @@ a { color:inherit; }
 
 <p>Se autorizzi il ripiego a pagamento, quando il motore scelto non risponde gli stessi dati possono andare anche agli altri motori cloud che hai configurato. L'app lo dice nel punto in cui si attiva.</p>
 
-<p>L'audio non viene mai inviato a un motore AI: solo testo.</p>
+<p>L'audio va a un motore AI solo se hai scelto di farti trascrivere da lui: per l'analisi, «Chiedi» e la ricerca va sempre e solo testo.</p>
 
 <h2>Nessun tracciamento</h2>
 
@@ -108,13 +108,13 @@ a { color:inherit; }
 <hr>
 
 <h1>Privacy Policy</h1>
-<p class="updated">VoiceToTask — last updated 30 September 2026</p>
+<p class="updated">VoiceToTask — last updated 1 October 2026</p>
 
 <p class="lead">VoiceToTask does not collect your data. We run no servers, there are no accounts, and we do not know who you are. This page explains where the things you say to the app end up.</p>
 
 <h2>What stays on your iPhone</h2>
 <ul>
-  <li><strong>Audio recordings.</strong> Stored in the app's own area on the device and, if iCloud is on, in your private iCloud. They never reach us.</li>
+  <li><strong>Audio recordings.</strong> Stored in the app's own area on the device and, if iCloud is on, in your private iCloud. They never reach us; they reach a transcription provider only if you choose so (see below).</li>
   <li><strong>Transcripts, tasks, deadlines, summaries.</strong> In a local database.</li>
   <li><strong>Your API keys.</strong> In the iOS Keychain. The app never sends them to us, or to anyone other than the provider they belong to.</li>
 </ul>
@@ -124,7 +124,7 @@ a { color:inherit; }
 <p>This happens in two cases, both under your control.</p>
 
 <ul>
-  <li><strong>Transcription.</strong> Runs on device. If the local recognition model is not available for the chosen language, iOS sends the audio to Apple's servers to transcribe it: this is the system speech recognition, governed by Apple's own privacy policy. Each recording's page states which of the two paths was used.</li>
+  <li><strong>Transcription.</strong> Runs on device. If the local recognition model is not available for the chosen language, iOS sends the audio to Apple's servers to transcribe it: this is the system speech recognition, governed by Apple's own privacy policy. If instead you choose in Settings to have OpenAI or Google transcribe (useful for dialects and difficult audio), or you ask for it on a single recording, the audio goes to that provider, using your key, after a notice that tells you so. Each recording's page states which path was used.</li>
   <li><strong>Cloud AI engine.</strong> If you choose a cloud engine (Anthropic, OpenAI, Google, or a compatible endpoint), data goes straight from your iPhone to that provider, using your key. It does not pass through us. Processing is governed by the policy of the provider you chose. With Apple Intelligence, everything stays on device.</li>
 </ul>
 
@@ -137,7 +137,7 @@ a { color:inherit; }
 
 <p>If you allow the paid fallback, when your chosen engine does not answer the same data can also go to the other cloud engines you have set up. The app says so where you turn it on.</p>
 
-<p>Audio is never sent to an AI engine: text only.</p>
+<p>Audio goes to an AI engine only if you chose to have it transcribe: analysis, "Ask" and search only ever send text.</p>
 
 <h2>No tracking</h2>
 
