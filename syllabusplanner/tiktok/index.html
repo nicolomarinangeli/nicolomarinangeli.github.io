@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TikTok publisher — Syllabus Planner</title>
+<style>
+  :root { color-scheme: light dark; --line: rgba(128,128,128,.28); --accent: #5b4bd6; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 42rem; margin: 0 auto; padding: 3rem 1.4rem 5rem;
+    color: #26231f; background: #faf7f2;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ece7e0; background: #17150f; --accent: #a79cff; } }
+  h1 { font-size: 1.75rem; margin-bottom: .2rem; }
+  h2 { font-size: 1.12rem; margin: 0 0 .6rem; }
+  .meta { opacity: .6; font-size: .95rem; margin-top: 0; }
+  .lead { font-size: 1.05rem; }
+  .card { border: 1px solid var(--line); border-radius: 12px; padding: 1.1rem 1.2rem; margin-top: 1.4rem; }
+  .card[hidden] { display: none; }
+  .row { display: flex; align-items: center; gap: .8rem; flex-wrap: wrap; }
+  .avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; background: var(--line); }
+  button {
+    font: inherit; font-weight: 600; padding: .55rem 1.1rem; border-radius: 9px; cursor: pointer;
+    border: 1px solid var(--accent); background: var(--accent); color: #fff;
+  }
+  button.secondary { background: transparent; color: inherit; border-color: var(--line); font-weight: 500; }
+  button:disabled { opacity: .45; cursor: not-allowed; }
+  input[type=file] { font: inherit; max-width: 100%; }
+  .status { margin: .8rem 0 0; min-height: 1.5em; }
+  .ok { color: #1c7a3f; } .err { color: #b3261e; }
+  @media (prefers-color-scheme: dark) { .ok { color: #5fd08a; } .err { color: #ff8a80; } }
+  code { background: var(--line); padding: .1em .35em; border-radius: 5px; font-size: .92em; }
+  ol { padding-left: 1.2rem; } li { margin-bottom: .4rem; }
+  footer { margin-top: 3.5rem; opacity: .65; font-size: .9rem; }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+
+<h1>TikTok publisher</h1>
+<p class="meta">Syllabus Planner · promotional videos for the app, sent to its own TikTok account</p>
+
+<p class="lead">A small personal tool: connect the app's TikTok account with TikTok Login,
+pick a promotional video, and send it to TikTok as a <strong>draft</strong>. Nothing is
+published automatically — the video waits in the TikTok app, where you add the caption
+and publish it yourself.</p>
+
+<section class="card" id="helper-missing" hidden>
+  <h2>The local helper is not running</h2>
+  <p>This page talks to a small program on your own computer. Start it and reload:</p>
+  <p><code>node Scripts/tiktok/server.mjs</code></p>
+  <button class="secondary" id="retry">Check again</button>
+</section>
+
+<section class="card" id="connect" hidden>
+  <h2>1 · Connect TikTok</h2>
+  <p>You will be sent to TikTok to authorize two things: reading the basic profile
+  (<code>user.info.basic</code>) and uploading a video as a draft (<code>video.upload</code>).</p>
+  <button id="connect-btn">Connect TikTok</button>
+  <p class="status err" id="connect-status"></p>
+</section>
+
+<section class="card" id="upload" hidden>
+  <div class="row">
+    <img class="avatar" id="avatar" alt="" hidden>
+    <div><strong id="who"></strong><br><span class="meta">Connected to TikTok</span></div>
+    <button class="secondary" id="disconnect" style="margin-left:auto">Disconnect</button>
+  </div>
+  <hr style="border:0;border-top:1px solid var(--line);margin:1.1rem 0">
+  <h2>2 · Send a video to your TikTok drafts</h2>
+  <p><input type="file" id="file" accept=".mp4,.mov,.webm,video/mp4,video/quicktime,video/webm"></p>
+  <button id="send" disabled>Upload to TikTok</button>
+  <p class="status" id="send-status" aria-live="polite"></p>
+</section>
+
+<section class="card">
+  <h2>How it works</h2>
+  <ol>
+    <li>Login Kit asks TikTok to confirm which account is being connected.</li>
+    <li>The video goes from your computer to TikTok through the Content Posting API (upload to inbox).</li>
+    <li>TikTok notifies the account in the TikTok app; the caption and the publish button are there.</li>
+  </ol>
+</section>
+
+<footer>
+  Nicolò Marinangeli · <a href="mailto:nicolom.dev.supporto@gmail.com">nicolom.dev.supporto@gmail.com</a>
+  · <a href="terms/">Terms</a> · <a href="privacy/">Privacy</a>
+</footer>
+
+<script>
+const HELPER = 'http://localhost:8787';
+const $ = (id) => document.getElementById(id);
+let pollTimer = null;
+
+async function call(path, opts) {
+  const res = await fetch(HELPER + path, opts);
+  const json = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(json?.error?.message || 'Error ' + res.status);
+  return json;
+}
+
+function show(which) {
+  for (const id of ['helper-missing', 'connect', 'upload']) $(id).hidden = id !== which;
+}
+
+async function refresh() {
+  let st;
+  try { st = await call('/api/status'); }
+  catch { show('helper-missing'); return; }
+  if (st.connected) {
+    $('who').textContent = st.user?.display_name || 'TikTok account';
+    const av = $('avatar');
+    if (st.user?.avatar_url) { av.src = st.user.avatar_url; av.hidden = false; } else { av.hidden = true; }
+    show('upload');
+  } else {
+    $('connect-status').textContent = st.configured ? (st.error || '') : 'The helper is missing the TikTok client key or secret (.env file).';
+    show('connect');
+  }
+}
+
+$('retry').addEventListener('click', refresh);
+
+$('connect-btn').addEventListener('click', async () => {
+  $('connect-status').textContent = '';
+  try {
+    const { url } = await call('/api/auth-url');
+    window.location.href = url;
+  } catch (e) { $('connect-status').textContent = e.message; }
+});
+
+$('disconnect').addEventListener('click', async () => {
+  if (pollTimer) clearTimeout(pollTimer);
+  try { await call('/api/disconnect', { method: 'POST' }); } catch (e) { $('send-status').textContent = e.message; }
+  $('send-status').textContent = '';
+  refresh();
+});
+
+$('file').addEventListener('change', () => { $('send').disabled = !$('file').files.length; $('send-status').textContent = ''; });
+
+const STATUS_TEXT = {
+  PROCESSING_UPLOAD: 'TikTok is processing the upload…',
+  PROCESSING_DOWNLOAD: 'TikTok is processing the upload…',
+  SEND_TO_USER_INBOX: 'Done. The video is waiting in your TikTok drafts: open the TikTok app, add a caption and publish.',
+  PUBLISH_COMPLETE: 'Done. The video is on TikTok.',
+};
+
+function poll(publishId, tries = 0) {
+  call('/api/publish-status?publish_id=' + encodeURIComponent(publishId)).then((s) => {
+    const done = s.status === 'SEND_TO_USER_INBOX' || s.status === 'PUBLISH_COMPLETE';
+    const failed = s.status === 'FAILED';
+    const el = $('send-status');
+    el.className = 'status ' + (done ? 'ok' : failed ? 'err' : '');
+    el.textContent = failed ? 'TikTok could not process the video' + (s.fail_reason ? ' (' + s.fail_reason + ')' : '.') : (STATUS_TEXT[s.status] || s.status);
+    if (!done && !failed && tries < 40) pollTimer = setTimeout(() => poll(publishId, tries + 1), 3000);
+    else if (!done && !failed) el.textContent = 'Still processing. Check the TikTok app in a few minutes.';
+  }).catch((e) => { $('send-status').className = 'status err'; $('send-status').textContent = e.message; });
+}
+
+$('send').addEventListener('click', async () => {
+  const file = $('file').files[0];
+  if (!file) return;
+  const el = $('send-status');
+  el.className = 'status';
+  el.textContent = 'Uploading ' + file.name + '…';
+  $('send').disabled = true;
+  try {
+    const out = await call('/api/upload', {
+      method: 'POST',
+      headers: { 'X-Filename': encodeURIComponent(file.name), 'Content-Type': file.type || 'application/octet-stream' },
+      body: file,
+    });
+    el.textContent = 'Uploaded. Waiting for TikTok…';
+    poll(out.publish_id);
+  } catch (e) {
+    el.className = 'status err';
+    el.textContent = e.message;
+  } finally {
+    $('send').disabled = !$('file').files.length;
+  }
+});
+
+refresh();
+if (new URLSearchParams(location.search).has('connected')) history.replaceState(null, '', location.pathname);
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Connecting TikTok — Syllabus Planner</title>
+<style>
+  :root { color-scheme: light dark; }
+  body {
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 34rem; margin: 0 auto; padding: 4rem 1.4rem;
+    color: #26231f; background: #faf7f2;
+  }
+  @media (prefers-color-scheme: dark) { body { color: #ece7e0; background: #17150f; } }
+  h1 { font-size: 1.5rem; }
+  .err { color: #b3261e; }
+  @media (prefers-color-scheme: dark) { .err { color: #ff8a80; } }
+  a { color: inherit; }
+</style>
+</head>
+<body>
+<h1 id="title">Connecting TikTok…</h1>
+<p id="msg">One moment.</p>
+<p id="back" hidden><a href="../">Back to the TikTok publisher</a></p>
+
+<script>
+(function () {
+  const HELPER = 'http://localhost:8787';
+  const p = new URLSearchParams(location.search);
+  const code = p.get('code');
+  const state = p.get('state');
+  const error = p.get('error');
+  const errorDescription = p.get('error_description');
+  // the code is single-use: take it out of the address bar right away
+  history.replaceState(null, '', location.pathname);
+
+  function fail(text) {
+    document.getElementById('title').textContent = 'Could not connect TikTok';
+    const m = document.getElementById('msg');
+    m.className = 'err';
+    m.textContent = text;
+    document.getElementById('back').hidden = false;
+  }
+
+  if (error) { fail(errorDescription || error); return; }
+  if (!code) { fail('TikTok did not send an authorization code.'); return; }
+
+  fetch(HELPER + '/api/callback', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ code: code, state: state }),
+  }).then(function (res) {
+    return res.json().catch(function () { return {}; }).then(function (json) {
+      if (!res.ok) throw new Error((json && json.error && json.error.message) || 'Error ' + res.status);
+      location.replace('../?connected=1');
+    });
+  }).catch(function (e) {
+    fail(e instanceof TypeError ? 'The local helper is not running. Start it with “node Scripts/tiktok/server.mjs” and connect again.' : e.message);
+  });
+})();
+</script>
+</body>
+</html>
