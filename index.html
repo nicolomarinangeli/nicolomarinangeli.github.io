@@ -4,36 +4,81 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Rialto</title>
+<meta name="description" content="Rialto per iPhone e Apple Watch: le spese pagate con Apple Pay si registrano da sole, il budget parte dal giorno dello stipendio, ETF e conti in una schermata. Senza account e senza server.">
+<meta name="apple-itunes-app" content="app-id=6804364683">
+<link rel="icon" href="img/icona.png">
+<link rel="alternate" hreflang="it" href="https://nicolomarinangeli.github.io/">
+<link rel="alternate" hreflang="en" href="https://nicolomarinangeli.github.io/en/">
 <style>
-  :root { color-scheme: light dark; }
-  body {
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    max-width: 42rem; margin: 0 auto; padding: 4rem 1.4rem 5rem;
-    color: #26231f; background: #faf7f2;
-  }
-  @media (prefers-color-scheme: dark) { body { color: #ece7e0; background: #17150f; } }
-  h1 { font-size: 2rem; margin-bottom: .2rem; }
-  .meta { opacity: .6; font-size: .95rem; margin-top: 0; }
-  .lead { font-size: 1.05rem; margin-top: 2rem; }
-  ul.links { list-style: none; padding: 0; margin-top: 2.5rem; }
-  ul.links li { margin-bottom: .9rem; }
-  ul.links a { font-size: 1.05rem; }
-  footer { margin-top: 4rem; opacity: .6; font-size: .9rem; }
+  :root { color-scheme: light dark; --fg:#26231f; --bg:#faf7f2; --muted:#6f6a62; --accent:#1d6b73; --line:rgba(38,35,31,.12); --card:#fff; }
+  @media (prefers-color-scheme: dark) { :root { --fg:#ece7e0; --bg:#17150f; --muted:#a39d93; --accent:#6cc3cb; --line:rgba(236,231,224,.14); --card:#211e17; } }
+  * { box-sizing: border-box; }
+  body { font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    max-width: 46rem; margin: 0 auto; padding: 3rem 1.25rem 4rem; color: var(--fg); background: var(--bg); }
+  a { color: var(--accent); }
+  .lingua { text-align: right; font-size: .9rem; margin: 0 0 1.5rem; }
+  header { display: flex; gap: 1rem; align-items: center; }
+  header img { width: 72px; height: 72px; border-radius: 16px; }
+  h1 { font-size: 2rem; line-height: 1.15; margin: 0; }
+  .meta { color: var(--muted); margin: .15rem 0 0; }
+  .titolo { font-size: 1.6rem; line-height: 1.25; margin: 2.5rem 0 .6rem; text-wrap: balance; }
+  .lead { font-size: 1.08rem; margin: 0; }
+  .scarica { display: inline-block; margin-top: 1.5rem; padding: .75rem 1.3rem; border-radius: 999px;
+    background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 600; }
+  .nota { color: var(--muted); font-size: .92rem; margin-top: .6rem; }
+  .vetrine { display: flex; gap: .8rem; overflow-x: auto; margin: 2.5rem -1.25rem 0; padding: 0 1.25rem .5rem; scroll-snap-type: x mandatory; }
+  .vetrine img { width: 210px; flex: none; border-radius: 18px; border: 1px solid var(--line); scroll-snap-align: start; }
+  h2 { font-size: 1.15rem; margin: 2.6rem 0 .4rem; }
+  ul.punti { padding-left: 1.2rem; margin: 0; }
+  ul.punti li { margin-bottom: .4rem; }
+  ul.links { list-style: none; padding: 0; margin: 3rem 0 0; display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; }
+  footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
 </style>
 </head>
 <body>
 
-<h1>Rialto</h1>
-<p class="meta">Conti, spese e investimenti che restano sul tuo telefono.</p>
+<p class="lingua"><a href="en/">English</a></p>
 
-<p class="lead">Rialto non ha account e non ha server. I movimenti, i conti e le
-posizioni stanno sul dispositivo e, se accendi la sincronizzazione, nel
-<strong>tuo</strong> iCloud: in nessuno dei due casi passano da chi sviluppa
-l'app.</p>
+<header>
+  <img src="img/icona.png" alt="">
+  <div>
+    <h1>Rialto</h1>
+    <p class="meta">Spese, budget e patrimonio, per iPhone e Apple Watch</p>
+  </div>
+</header>
+
+<p class="titolo">Paghi con Apple Pay e la spesa è già registrata.</p>
+<p class="lead">Sul conto giusto, con la categoria indovinata, senza aprire l'app. Il budget parte dal giorno dello stipendio, e conti, carte, ETF e contanti stanno in una schermata sola.</p>
+
+<a class="scarica" href="https://apps.apple.com/app/id6804364683">Scarica sull'App Store</a>
+<p class="nota">Gratis, con Rialto Pro facoltativo. Richiede iOS 26 o successivo.</p>
+
+<div class="vetrine">
+  <img src="img/it-1-tutto.jpg" alt="Spese, budget, patrimonio: tutto in un'app" loading="lazy" width="560" height="1216">
+  <img src="img/it-2-oggi.jpg" alt="La schermata Oggi" loading="lazy" width="560" height="1216">
+  <img src="img/it-4-spese.jpg" alt="Le spese del mese" loading="lazy" width="560" height="1216">
+  <img src="img/it-7-polso.jpg" alt="Rialto su Apple Watch" loading="lazy" width="560" height="1216">
+</div>
+
+<h2>Quello che fa</h2>
+<ul class="punti">
+  <li>Le spese pagate con Apple Pay si scrivono da sole, con un'automazione di Comandi che imposti una volta in tre minuti</li>
+  <li>Il mese parte dalla paga, non dal primo: vedi quanto ti resta fino al prossimo stipendio</li>
+  <li>ETF, azioni, obbligazioni, cripto e metalli con i prezzi che si aggiornano, e le cedole che si accreditano</li>
+  <li>L'estratto conto della banca entra da CSV, Excel, OpenDocument o Numbers</li>
+  <li>Su Apple Watch quanto ti resta da spendere, e i contanti si segnano girando la corona</li>
+</ul>
+<h2>Dove stanno i dati</h2>
+<ul class="punti">
+  <li>Sul telefono, e nel tuo iCloud se accendi la sincronizzazione</li>
+  <li>Nessun account da creare, nessun server di Rialto: chi sviluppa l'app non riceve un solo numero</li>
+  <li>Il coach con l'AI, se lo vuoi, gira sul dispositivo con Apple Intelligence</li>
+</ul>
 
 <ul class="links">
   <li><a href="privacy/">Informativa sulla privacy</a></li>
   <li><a href="supporto/">Supporto</a></li>
+  <li><a href="termini/">Condizioni d'uso</a></li>
 </ul>
 
 <footer>Nicolò Marinangeli · <a href="mailto:nicolom.dev.supporto@gmail.com">nicolom.dev.supporto@gmail.com</a></footer>

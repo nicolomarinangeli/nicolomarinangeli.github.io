@@ -1,6 +1,8 @@
 # Pagine pubbliche di Rialto
 
-Privacy e supporto dell'app **Rialto**, pubblicate con GitHub Pages.
+Pagina dell'app **Rialto**, con privacy e supporto, pubblicate con GitHub Pages.
+
+- `index.html` — la pagina di Rialto in italiano, `en/` in inglese, immagini in `img/`
 
 - `privacy/` — informativa sulla privacy (URL richiesto da App Store Connect)
 - `supporto/` — pagina di assistenza (URL richiesto da App Store Connect)
