@@ -24,7 +24,7 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">DeckSleeve · updated 3 October 2026 · <a href="../../privacy/">Italiano</a></p>
+<p class="meta">DeckSleeve · updated 20 October 2026 · <a href="../../privacy/">Italiano</a></p>
 
 <p class="lead">DeckSleeve has no accounts and no servers, and its developer
 receives none of your data. The cards you own, what you paid for them, the sets
@@ -37,7 +37,8 @@ the outside world and exactly what leaves it.</p>
 Yu-Gi-Oh!, One Piece, Dragon Ball Super — and the app recognises it, adds it to
 your collection and tells you what it is worth today. It keeps track of sets,
 of your collection's value over time and of the prices of cards you want to
-watch.</p>
+watch. It is available for iPhone and Android: this policy covers both, and
+says so where the two versions behave differently.</p>
 
 <h2>Where your data lives</h2>
 <p>Everything you enter — cards, quantities, condition, language, price paid,
@@ -45,21 +46,33 @@ notes, followed sets, watched cards and price thresholds — is stored in the
 app's database on your device, protected by the system's encryption. So are the
 downloaded catalogues, the history of prices seen and the card images already
 shown, so they are not downloaded twice.</p>
-<p>There is no sign-up and no profile. Your data is included in your device
-backups like everything else, and deleting the app deletes it. Today the app
-<strong>does not use iCloud</strong>: if sync ever arrives, it will stay off
-until you turn it on, and this page will say so first.</p>
+<p>There is no sign-up and no profile. Deleting the app deletes your data. It
+is included in your device backups, if you have them on:</p>
+<ul>
+  <li><strong>on iPhone</strong>, in the device backup, like everything else;</li>
+  <li><strong>on Android</strong>, in your Google account backup. Only your
+  collection and settings go there; catalogues, prices and images stay out, and
+  after a restore the app fetches them again from the sources.</li>
+</ul>
+<p>Today the app has no sync of its own and on iPhone <strong>does not use
+iCloud</strong>: if sync ever arrives, it will stay off until you turn it on,
+and this page will say so first.</p>
 
 <h2>The camera</h2>
 <p>The camera is used only to read cards. Recognition happens <strong>on the
-device</strong>, with Apple's built-in tools: no photo or frame is uploaded
-anywhere.</p>
+device</strong>: on iPhone with Apple's built-in tools, on Android with Google's
+ML Kit text recognition, which runs on the phone with a model shipped inside the
+app. No photo or frame is uploaded anywhere.</p>
+<p>On Android, ML Kit may send Google technical data about how it works: phone
+model and system, app version, recognition timings and error codes. It does not
+send the images or the text read. Google handles it under the
+<a href="https://developers.google.com/ml-kit/terms">ML Kit terms</a>.</p>
 <p>The last few frames read are kept briefly in a temporary folder of the app,
 to show your photo next to the catalogue picture when the app asks you to
 confirm a card. The folder is emptied every time you reopen the scanner, and the
 system may empty it at any time.</p>
 <p>If you choose to read a photo from your library, the app uses the system
-picker, which hands over only the photo you picked: the app has no access to
+picker, on iPhone as on Android, which hands over only the photo you picked: the app has no access to
 the rest of your library.</p>
 
 <h2>What leaves the device, and to whom</h2>
@@ -82,10 +95,16 @@ They contain only what is needed to find a card:</p>
 <p>The sources are <a href="https://tcgdex.dev">TCGdex</a> and
 <a href="https://pokemontcg.io">pokemontcg.io</a> (Pokémon),
 <a href="https://scryfall.com">Scryfall</a> (Magic),
-<a href="https://ygoprodeck.com">YGOPRODeck</a> (Yu-Gi-Oh!),
+<a href="https://ygoprodeck.com">YGOPRODeck</a> and
+<a href="https://github.com/DawnbrandBots/yaml-yugi">yaml-yugi</a> (Yu-Gi-Oh!),
 <a href="https://tcgcsv.com">TCGCSV</a> (One Piece, Dragon Ball and sealed
-products), and the public price guides of
-<a href="https://www.cardmarket.com">Cardmarket</a>. Like any internet service,
+products), the public price guides of
+<a href="https://www.cardmarket.com">Cardmarket</a> and the exchange rates of
+the <a href="https://www.ecb.europa.eu">European Central Bank</a>, to show
+prices in your currency. On Android the TCGCSV price lists come from a copy we
+publish on GitHub Pages (nicolomarinangeli.github.io/decksleeve-dati): it is a
+static file, the same for everyone; GitHub sees the IP address like any
+service, and nothing reaches us. Like any internet service,
 they see the IP address a request comes from and handle it under their own
 policies. The app identifies itself to them by its name and version, nothing
 else.</p>
@@ -98,27 +117,37 @@ local: the phone prepares and shows them, and no server sends them, because
 there is no server. Turn them off in the app under Profile → Notifications, or in
 the system settings.</p>
 
-<h2>Widgets and the Control Center button</h2>
+<h2>Widgets and quick buttons</h2>
 <p>The Home Screen widgets show your collection's value and the cards moving it.
 The app writes that summary to a protected area of the device that only
 DeckSleeve and its widgets can read; it never leaves the device. With «Hide
 amounts» on, the widgets show no figures. The Control Center and Lock Screen
-button only opens the app on the scanner: it reads and sends nothing.</p>
+button only opens the app on the scanner: it reads and sends nothing. On
+Android, the Quick Settings tile does the same.</p>
 
 <h2>Import and export</h2>
-<p>Export creates a CSV file of your cards and hands it to the system share
-sheet: where it goes next is up to you. Import reads only the file you pick in
+<p>Export creates a CSV file of your cards: on iPhone it hands it to the
+system share sheet, on Android it saves it where you choose with the document
+picker. Where it goes next is up to you. Import reads only the file you pick in
 the system picker.</p>
 
 <h2>Purchases</h2>
 <p>DeckSleeve Pro — a monthly or yearly subscription, or a one-time purchase —
-goes through Apple. We see only whether a purchase is active on the device: not
-who you are, not how you paid. Restoring purchases talks to Apple, not to us.
-Subscriptions are cancelled from your Apple account settings.</p>
+goes through the App Store on iPhone and Google Play on Android. We see only
+whether a purchase is active on the device: not who you are, not how you paid.
+Restoring purchases talks to Apple or Google, not to us. Subscriptions are
+cancelled from your Apple account settings or from Google Play → Payments &amp;
+subscriptions.</p>
+<p>On Android the app may ask you for a review with Google Play's own window:
+Google handles it, and we do not know whether you left one.</p>
 
 <h2>Data collected</h2>
 <p><strong>None.</strong> We collect no personal data, keep no user database,
-and receive no usage statistics or crash reports.</p>
+and receive no usage statistics or crash reports. The ML Kit technical data
+described above goes to Google, not to us. On Android, if you agreed in your
+phone's settings to share diagnostic data, Google Play may show us anonymous,
+aggregated statistics about the app's crashes and freezes, with nothing that
+identifies you.</p>
 <p>The app contains no analytics or tracking tools, shows no ads, does not use
 the device's advertising identifier and shares nothing with advertisers or
 brokers.</p>

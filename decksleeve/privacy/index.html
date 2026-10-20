@@ -24,7 +24,7 @@
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="meta">DeckSleeve · aggiornata il 3 ottobre 2026 · <a href="../en/privacy/">English</a></p>
+<p class="meta">DeckSleeve · aggiornata il 20 ottobre 2026 · <a href="../en/privacy/">English</a></p>
 
 <p class="lead">DeckSleeve non ha account, non ha server, e chi la sviluppa non
 riceve nessuno dei tuoi dati. Le carte che possiedi, quanto le hai pagate, i set
@@ -36,7 +36,9 @@ in cui l'app parla con l'esterno e cosa esattamente le esce di mano.</p>
 <p>Inquadri una carta collezionabile — Pokémon, Magic: The Gathering,
 Yu-Gi-Oh!, One Piece, Dragon Ball Super — e l'app la riconosce, la mette nel
 tuo albo e ti dice quanto vale oggi. Tiene il conto dei set, del valore della
-collezione nel tempo e dei prezzi delle carte che vuoi tenere d'occhio.</p>
+collezione nel tempo e dei prezzi delle carte che vuoi tenere d'occhio. È
+disponibile per iPhone e per Android: questa informativa vale per entrambe, e
+dove le due versioni si comportano in modo diverso lo dice.</p>
 
 <h2>Dove stanno i tuoi dati</h2>
 <p>Tutto quello che inserisci — carte, quantità, condizione, lingua, prezzo
@@ -44,22 +46,36 @@ pagato, note, set seguiti, carte osservate e le soglie di prezzo — sta nel
 database dell'app sul dispositivo, protetto dalla cifratura del sistema. Ci
 stanno anche i cataloghi scaricati, lo storico dei prezzi visti e le immagini
 delle carte già mostrate, per non riscaricarle.</p>
-<p>Non c'è nessuna registrazione e nessun profilo. I dati finiscono nei backup
-del dispositivo, come il resto, e se disinstalli l'app se ne vanno con lei.
-Oggi l'app <strong>non usa iCloud</strong>: se un giorno arriverà la
-sincronizzazione, sarà spenta finché non la accendi tu e questa pagina lo dirà
-prima.</p>
+<p>Non c'è nessuna registrazione e nessun profilo. Se disinstalli l'app, i
+dati se ne vanno con lei. Finiscono invece nei backup del dispositivo, se li
+hai accesi:</p>
+<ul>
+  <li><strong>su iPhone</strong>, nel backup del dispositivo, come il resto;</li>
+  <li><strong>su Android</strong>, nel backup del tuo account Google. Lì va
+  soltanto la collezione con le impostazioni; cataloghi, prezzi e immagini
+  restano fuori, e dopo un ripristino l'app li riprende dalle fonti.</li>
+</ul>
+<p>Oggi l'app non ha una sincronizzazione sua e su iPhone <strong>non usa
+iCloud</strong>: se un giorno arriverà, sarà spenta finché non la accendi tu e
+questa pagina lo dirà prima.</p>
 
 <h2>La fotocamera</h2>
 <p>La fotocamera serve solo a leggere le carte. Il riconoscimento avviene
-<strong>sul dispositivo</strong>, con gli strumenti di Apple integrati nel
-sistema: nessuna foto e nessun fotogramma viene caricato da nessuna parte.</p>
+<strong>sul dispositivo</strong>: su iPhone con gli strumenti di Apple integrati
+nel sistema, su Android con il riconoscimento del testo ML Kit di Google, che
+gira sul telefono con un modello contenuto nell'app. Nessuna foto e nessun
+fotogramma viene caricato da nessuna parte.</p>
+<p>Su Android, ML Kit può mandare a Google dati tecnici sul proprio
+funzionamento: modello e sistema del telefono, versione dell'app, tempi e
+codici di errore del riconoscimento. Non manda le immagini né il testo letto.
+Google li tratta secondo i
+<a href="https://developers.google.com/ml-kit/terms">termini di ML Kit</a>.</p>
 <p>Gli ultimi fotogrammi letti restano per poco in una cartella temporanea
 dell'app, per mostrarti la tua foto accanto a quella del catalogo quando l'app
 ti chiede di confermare una carta. La cartella viene svuotata ogni volta che
 riapri lo scanner, e il sistema la può svuotare quando vuole.</p>
 <p>Se scegli di far leggere una foto del rullino, l'app usa il selettore di
-sistema, che le consegna soltanto la foto che hai indicato: non ha accesso al
+sistema, su iPhone come su Android, che le consegna soltanto la foto che hai indicato: non ha accesso al
 resto della tua libreria.</p>
 
 <h2>Cosa esce dal dispositivo, e verso chi</h2>
@@ -83,10 +99,17 @@ che serve a trovare una carta:</p>
 <p>Le fonti sono: <a href="https://tcgdex.dev">TCGdex</a> e
 <a href="https://pokemontcg.io">pokemontcg.io</a> (Pokémon),
 <a href="https://scryfall.com">Scryfall</a> (Magic),
-<a href="https://ygoprodeck.com">YGOPRODeck</a> (Yu-Gi-Oh!),
+<a href="https://ygoprodeck.com">YGOPRODeck</a> e
+<a href="https://github.com/DawnbrandBots/yaml-yugi">yaml-yugi</a> (Yu-Gi-Oh!),
 <a href="https://tcgcsv.com">TCGCSV</a> (One Piece, Dragon Ball e prodotti
-sigillati), e i listini pubblici di
-<a href="https://www.cardmarket.com">Cardmarket</a>. Come ogni servizio
+sigillati), i listini pubblici di
+<a href="https://www.cardmarket.com">Cardmarket</a> e i cambi fra le valute
+della <a href="https://www.ecb.europa.eu">Banca centrale europea</a>, per
+mostrarti i prezzi nella tua valuta. Su Android i listini di TCGCSV arrivano da
+una copia che pubblichiamo noi su GitHub Pages
+(nicolomarinangeli.github.io/decksleeve-dati): è un file statico uguale per
+tutti, GitHub vede l'indirizzo IP come ogni servizio, e a noi non arriva
+niente. Come ogni servizio
 internet, vedono l'indirizzo IP da cui arriva la richiesta, e lo trattano
 secondo le loro regole. L'app si presenta a loro con il proprio nome e la
 versione, senza altro.</p>
@@ -99,30 +122,38 @@ locali: le prepara e le mostra il telefono, nessun server ce le manda, perché
 non c'è un server. Si spengono dall'app, in Profilo → Notifiche, o dalle
 impostazioni di sistema.</p>
 
-<h2>I widget e il pulsante del Centro di Controllo</h2>
+<h2>I widget e i pulsanti rapidi</h2>
 <p>I widget della schermata Home mostrano il valore della collezione e le carte
 che lo muovono. L'app scrive quel riepilogo in un'area protetta del dispositivo
 che possono leggere solo DeckSleeve e i suoi widget; non lascia mai il
 dispositivo. Con «Nascondi gli importi» acceso, i widget non mostrano cifre. Il
 pulsante del Centro di Controllo e della schermata di blocco apre soltanto l'app
-sullo scanner: non legge e non manda niente.</p>
+sullo scanner: non legge e non manda niente. Su Android fa lo stesso il
+riquadro nelle impostazioni rapide.</p>
 
 <h2>Importare ed esportare</h2>
-<p>L'esportazione crea un file CSV con le tue carte e te lo consegna nel foglio
-di condivisione del sistema: dove va dopo lo decidi tu. L'importazione legge
+<p>L'esportazione crea un file CSV con le tue carte: su iPhone te lo consegna
+nel foglio di condivisione del sistema, su Android lo salva dove scegli tu con
+il selettore di documenti. Dove va dopo lo decidi tu. L'importazione legge
 soltanto il file che scegli nel selettore di sistema.</p>
 
 <h2>Acquisti</h2>
 <p>DeckSleeve Pro — abbonamento mensile, annuale o acquisto una tantum — passa
-da Apple. Noi vediamo soltanto se un acquisto risulta attivo sul dispositivo:
-non chi sei, non come hai pagato. Il ripristino degli acquisti parla con Apple,
-non con noi. Gli abbonamenti si disdicono dalle impostazioni del tuo account
-Apple.</p>
+dall'App Store su iPhone e da Google Play su Android. Noi vediamo soltanto se un
+acquisto risulta attivo sul dispositivo: non chi sei, non come hai pagato. Il
+ripristino degli acquisti parla con Apple o con Google, non con noi. Gli
+abbonamenti si disdicono dalle impostazioni del tuo account Apple o da Google
+Play → Pagamenti e abbonamenti.</p>
+<p>Su Android l'app può chiederti una recensione con la finestra di Google
+Play: la gestisce Google, e noi non sappiamo se l'hai lasciata.</p>
 
 <h2>Dati raccolti</h2>
 <p><strong>Nessuno.</strong> Non raccogliamo dati personali, non abbiamo un
 database di utenti, non riceviamo statistiche d'uso né rapporti sugli
-arresti.</p>
+arresti. I dati tecnici di ML Kit descritti sopra vanno a Google, non a noi. Su
+Android, se nelle impostazioni del telefono hai acconsentito a condividere i
+dati di diagnostica, Google Play può mostrarci statistiche anonime e aggregate
+su arresti e blocchi dell'app, senza niente che ti identifichi.</p>
 <p>L'app non contiene strumenti di analisi o di tracciamento, non mostra
 pubblicità, non usa l'identificativo pubblicitario del dispositivo e non
 condivide niente con inserzionisti o intermediari.</p>
