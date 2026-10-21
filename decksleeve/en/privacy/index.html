@@ -24,11 +24,12 @@
 <body>
 
 <h1>Privacy Policy</h1>
-<p class="meta">DeckSleeve · updated 20 October 2026 · <a href="../../privacy/">Italiano</a></p>
+<p class="meta">DeckSleeve · updated 21 October 2026 · <a href="../../privacy/">Italiano</a></p>
 
 <p class="lead">DeckSleeve has no accounts and no servers, and its developer
 receives none of your data. The cards you own, what you paid for them, the sets
-you follow and the cards you watch stay on your device and nowhere else. Card
+you follow and the cards you watch stay on your device and, if you turn sync
+on, in your private iCloud: none of it reaches us. Card
 photos never leave your phone. What follows lists every moment the app talks to
 the outside world and exactly what leaves it.</p>
 
@@ -46,7 +47,8 @@ notes, followed sets, watched cards and price thresholds — is stored in the
 app's database on your device, protected by the system's encryption. So are the
 downloaded catalogues, the history of prices seen and the card images already
 shown, so they are not downloaded twice.</p>
-<p>There is no sign-up and no profile. Deleting the app deletes your data. It
+<p>There is no sign-up and no profile. Deleting the app deletes your data,
+except the iCloud copy if you turned it on. It
 is included in your device backups, if you have them on:</p>
 <ul>
   <li><strong>on iPhone</strong>, in the device backup, like everything else;</li>
@@ -54,9 +56,35 @@ is included in your device backups, if you have them on:</p>
   collection and settings go there; catalogues, prices and images stay out, and
   after a restore the app fetches them again from the sources.</li>
 </ul>
-<p>Today the app has no sync of its own and on iPhone <strong>does not use
-iCloud</strong>: if sync ever arrives, it will stay off until you turn it on,
-and this page will say so first.</p>
+<h2>iCloud</h2>
+<p>On iPhone, from version 1.4, DeckSleeve Pro members can keep their
+collection in iCloud and find it on all their devices, under Profile → Settings
+→ iCloud and backup. <strong>It stays off until you turn it on.</strong> It
+goes through your Apple Account: we have no servers and see nothing. When it is
+on:</p>
+<ul>
+  <li><strong>your collection and watched cards</strong> go to the private
+  iCloud database of your Apple Account. The content of each entry — which
+  card, copies, condition, language, price paid, grading, location, notes,
+  price thresholds — is encrypted on the device before it leaves, with
+  CloudKit's end-to-end encryption: neither Apple nor we can read it. Apple can
+  only see the technical data iCloud needs to keep it in order: a random code
+  for each entry, the kind of entry, the format version and when it changed;</li>
+  <li><strong>your settings</strong> — currency, suggested condition and
+  language, the name you chose, appearance, the sets you stopped following,
+  which notifications you want — go through iCloud's key-value storage,
+  protected by Apple like the rest of iCloud but not end-to-end encrypted.</li>
+</ul>
+<p>Photos, catalogues, prices and card images do not go to iCloud: each device
+gets them from the sources. If the same card changes on two devices, the last
+edit wins. If you turn sync off, or DeckSleeve Pro ends, your collection stays
+on the phone and the iCloud copy stays where it is. To delete it, use iCloud
+storage management in your phone's settings, under DeckSleeve: the app notices,
+turns sync off and leaves the collection on the phone untouched. If you reset
+your iCloud Keychain, the encrypted copy can no longer be read, and the app
+rebuilds it from what is on the phone.</p>
+<p>On Android there is no sync: the Google account backup described above
+applies.</p>
 
 <h2>The camera</h2>
 <p>The camera is used only to read cards. Recognition happens <strong>on the
@@ -144,7 +172,8 @@ Google handles it, and we do not know whether you left one.</p>
 <h2>Data collected</h2>
 <p><strong>None.</strong> We collect no personal data, keep no user database,
 and receive no usage statistics or crash reports. The ML Kit technical data
-described above goes to Google, not to us. On Android, if you agreed in your
+described above goes to Google, not to us, and what you put in iCloud is kept
+by Apple for you. On Android, if you agreed in your
 phone's settings to share diagnostic data, Google Play may show us anonymous,
 aggregated statistics about the app's crashes and freezes, with nothing that
 identifies you.</p>
@@ -156,7 +185,8 @@ brokers.</p>
 <p>We keep nothing, because nothing reaches us. Your data stays on your device
 for as long as you decide. You can remove single cards from your collection,
 remove a game and its catalogue under Profile → Games and catalogue, or delete
-the app, which erases everything. There is no need to ask us: we have no
+the app, which erases everything. The iCloud copy, if you turned it on, is
+deleted as described above. There is no need to ask us: we have no
 copy.</p>
 
 <h2>Children</h2>
