@@ -27,7 +27,7 @@
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="meta">Rialto · aggiornata il 29 settembre 2026</p>
+<p class="meta">Rialto · aggiornata il 6 novembre 2026</p>
 
 <p class="lead">Rialto non ha account, non ha server, e chi la
 sviluppa non riceve nessuno dei tuoi dati. I tuoi movimenti stanno sul telefono
@@ -88,8 +88,8 @@ partono dal tuo iPhone e vanno direttamente al fornitore che hai scelto.</p>
       parola per parola.</li>
   <li><strong>Categoria di una spesa.</strong> Il nome dell'esercente e l'elenco
       delle tue categorie; la nota che hai scritto sulla spesa solo se lo permetti
-      nelle impostazioni; e, se l'interruttore è acceso, il nome della città in cui
-      sei (vedi sotto). Mai l'importo, mai la data, mai il conto. Si può spegnere
+      nelle impostazioni; e, se gli interruttori sono accesi, il nome della città in
+      cui sei e i nomi dei negozi vicini a dove hai pagato (vedi sotto). Mai l'importo, mai la data, mai il conto. Si può spegnere
       del tutto.</li>
   <li><strong>Lettura del portafoglio.</strong> Il testo che incolli tu, e i nomi
       delle posizioni che hai registrato, perché servono ad abbinarli. Parte solo
@@ -116,6 +116,28 @@ può aggiungere al nome la città in cui ti trovi. Funziona così:</p>
   <li>si spegne da <em>Impostazioni → Intelligenza → Aggiungi la città in cui
       sei</em>, oppure togliendo il permesso da <em>Impostazioni di iOS → Privacy
       e sicurezza → Localizzazione → Rialto</em>.</li>
+</ul>
+<p><strong>I negozi vicini alla cassa.</strong> Sul terminale di pagamento
+molti negozi — tante tabaccherie, parrucchieri, piccoli bar — mostrano solo il
+nome e cognome del titolare, e da quello l'AI non può capire che cosa hai
+comprato. Per questo c'è un secondo interruttore, <em>Aggiungi i negozi vicini
+alla cassa</em>, spento finché non lo accendi tu:</p>
+<ul>
+  <li>funziona solo subito dopo un pagamento con Apple Pay registrato da Rialto,
+      e solo se hai dato a Rialto la <strong>posizione esatta</strong>
+      (<em>Impostazioni di iOS → Rialto → Posizione → Posizione esatta</em>);</li>
+  <li>in quel momento l'app chiede a iOS la posizione precisa e la passa ad Apple
+      Mappe per avere l'elenco delle attività entro qualche decina di metri. Quel
+      passaggio è di Apple e segue le sue condizioni;</li>
+  <li>al fornitore AI arrivano <strong>i nomi di quelle attività</strong>, il loro
+      tipo e la distanza in metri, accanto al nome del negozio che hai pagato: mai
+      le coordinate, mai un indirizzo, mai l'importo. Quei nomi dicono comunque
+      quasi esattamente dove ti trovavi, ed è per questo che l'interruttore è a
+      parte e spento di serie;</li>
+  <li>la posizione precisa non viene salvata: serve per quella sola ricerca;</li>
+  <li>si spegne da <em>Impostazioni → Intelligenza → Aggiungi i negozi vicini
+      alla cassa</em>, oppure togliendo la posizione esatta o il permesso della
+      posizione dalle impostazioni di iOS.</li>
 </ul>
 <p>Da quel momento valgono l'informativa e le condizioni del fornitore che hai
 scelto. Se preferisci che non esca niente, l'app supporta i modelli che girano
@@ -195,8 +217,9 @@ per il nome della città e, solo se lo colleghi tu con una tua chiave, il
 fornitore di intelligenza artificiale — sono gli unici destinatari possibili di
 una richiesta partita da Rialto. Alle fonti dei prezzi arriva un simbolo, non un
 dato che ti riguardi. Ad Apple Mappe arriva una posizione approssimativa, e solo
-se hai dato il permesso. Al fornitore AI, se ne hai attivato uno, arriva soltanto
-quello che serve alla domanda — i nomi dei negozi, la città se lo permetti, o la
+se hai dato il permesso; quella precisa solo dopo un pagamento con Apple Pay, se
+hai acceso <em>Aggiungi i negozi vicini alla cassa</em>. Al fornitore AI, se ne hai attivato uno, arriva soltanto
+quello che serve alla domanda — i nomi dei negozi, la città e i negozi vicini alla cassa se lo permetti, o la
 parte di numeri necessaria alla domanda che hai scritto — e ci arriva sotto il
 tuo contratto con lui, con la tua chiave.</p>
 <p>Non condividiamo dati personali con nessun altro: niente reti pubblicitarie,
@@ -222,8 +245,9 @@ tu, e si spegne con lo stesso interruttore con cui l'hai accesa.</p>
 <p>L'intelligenza artificiale di un fornitore esterno si disattiva togliendo la
 chiave da <em>Impostazioni → Intelligenza</em>: da quel momento non parte più
 nessuna richiesta. La città si toglie dallo stesso posto, con l'interruttore
-<em>Aggiungi la città in cui sei</em>, o togliendo il permesso della posizione
-dalle impostazioni di iOS. L'aggiornamento dei prezzi si ferma smettendo di richiederlo.
+<em>Aggiungi la città in cui sei</em>, i negozi vicini con <em>Aggiungi i negozi
+vicini alla cassa</em>, o togliendo il permesso della posizione dalle impostazioni
+di iOS. L'aggiornamento dei prezzi si ferma smettendo di richiederlo.
 La sincronizzazione si revoca da <em>Impostazioni di iOS → il tuo nome →
 iCloud</em>. La fotocamera, la posizione, la rete locale e Siri si revocano dalle
 impostazioni di iOS come per qualunque altra app. Revocare un permesso non ti fa perdere
