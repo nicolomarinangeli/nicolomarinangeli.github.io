@@ -26,7 +26,7 @@
 <body>
 
 <h1>Informativa sulla privacy</h1>
-<p class="meta">My Gut, My Way · aggiornata il 9 novembre 2026 · <a href="../en/privacy/">English</a></p>
+<p class="meta">My Gut, My Way · aggiornata il 13 novembre 2026 · <a href="../en/privacy/">English</a></p>
 
 <p class="lead">My Gut, My Way non ha account, non ha server, e chi la sviluppa non
 riceve nessuno dei tuoi dati. Il diario dei pasti e dei sintomi, gli alimenti che
@@ -44,9 +44,11 @@ medico: non fa diagnosi e non cura. Vedi i <a href="../termini/">termini d'uso</
 salvate, menù, spesa, dispensa, promemoria — sta nel database dell'app
 <strong>sul tuo iPhone</strong>, protetto dalla cifratura del sistema. Non c'è
 registrazione, non c'è sincronizzazione con server nostri, non c'è iCloud.</p>
-<p>Il diario contiene dati sulla salute. Proprio per questo non lascia mai il
-telefono: non va a noi, e non va a nessun assistente di intelligenza artificiale,
-nemmeno se ne colleghi uno tuo.</p>
+<p>Il diario contiene dati sulla salute. Proprio per questo resta sul telefono:
+non va a noi, e non va a nessun assistente di intelligenza artificiale, nemmeno se
+ne colleghi uno tuo. L'unica cosa che ne può uscire è il <strong>nome di un
+piatto</strong> che l'app non conosce, mandato da solo a Wikipedia per leggere di
+cosa è fatto (vedi <a href="#fonti">più sotto</a>).</p>
 <p>I dati finiscono nel backup dell'iPhone, se lo hai acceso, come il resto del
 telefono. Se disinstalli l'app, se ne vanno con lei.</p>
 
@@ -70,7 +72,7 @@ di sistema consegna all'app solo la foto che indichi.</p>
   Portachiavi dell'iPhone.</li>
 </ul>
 
-<h2>Wikipedia, Wikibooks, Open Food Facts e USDA</h2>
+<h2 id="fonti">Wikipedia, Wikibooks, Open Food Facts e USDA</h2>
 <p>Quando controlli un piatto con «Lo mangio?», l'app cerca prima nel ricettario
 che ha dentro: gli ingredienti principali di migliaia di piatti, presi da Wikipedia, e
 molte ricette con le dosi, prese da Wikibooks, tutto salvato sull'iPhone. A Wikibooks
@@ -78,12 +80,21 @@ l'app non manda niente. Se c'è connessione, manda a <strong>Wikipedia</strong> 
 Foundation) <strong>solo il nome del piatto</strong>, per leggere la pagina che lo
 descrive. Non manda il diario, i sintomi, gli alimenti che eviti né niente che ti
 identifichi. Senza rete il controllo funziona lo stesso, col solo ricettario.</p>
+<p>Lo stesso vale per il <strong>diario</strong>. Se salvi un pasto col nome di un
+piatto che l'app non conosce, senza ricetta e senza cibi scelti, l'app manda a
+Wikipedia <strong>solo quel nome</strong>, per leggere di cosa è fatto. I cibi
+trovati compaiono nel pasto e puoi toglierli. Non manda la data, l'ora, gli altri
+pasti, i sintomi né niente che ti identifichi. Senza rete il pasto si salva lo
+stesso, senza quei cibi.</p>
 <p>Quando scansioni il codice a barre di un prodotto, l'app manda a <strong>Open Food
 Facts</strong> <strong>solo quel codice</strong>, per leggere ingredienti e allergeni
 del prodotto. Se Open Food Facts non ha il prodotto o i suoi ingredienti, l'app
 manda <strong>solo lo stesso codice</strong> anche a <strong>USDA FoodData Central</strong>
 (il Dipartimento dell'Agricoltura degli Stati Uniti, attraverso api.data.gov), che
-raccoglie le etichette dei prodotti venduti negli Stati Uniti.</p>
+raccoglie le etichette dei prodotti venduti negli Stati Uniti. Se invece Open Food
+Facts ha il prodotto ma senza ingredienti, l'app ci cerca lo stesso prodotto in
+un'altra confezione, mandando <strong>solo nome e marca</strong> del prodotto
+scansionato.</p>
 <p>In tutti i casi la richiesta parte direttamente dal tuo iPhone, senza
 passare da noi, e vale l'informativa di quel servizio
 (<a href="https://foundation.wikimedia.org/wiki/Policy:Privacy_policy/it">Wikimedia</a>,
