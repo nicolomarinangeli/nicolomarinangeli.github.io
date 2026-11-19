@@ -14,3 +14,5 @@ Le pagine di **VoiceToTask** stanno in `voicetotask/`: `privacy.html` e `support
 Le pagine di **DeckSleeve** stanno in `decksleeve/`: `privacy/` e `supporto/` in italiano, `en/privacy/` e `en/support/` in inglese.
 
 Le pagine di **My Gut, My Way** stanno in `mygutmyway/`: `privacy/`, `supporto/` e `termini/` in italiano, `en/privacy/`, `en/support/` e `en/terms/` in inglese.
+
+Le pagine di **Marea** stanno in `marea/`: `privacy/` e `supporto/` in italiano, `en/privacy/` e `en/support/` in inglese.
