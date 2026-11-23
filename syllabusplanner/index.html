@@ -3,46 +3,182 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>SyllabusPlanner</title>
+<title>Syllabus Planner — piano di studio per gli esami dell'università</title>
+<meta name="description" content="Syllabus Planner è un'app per iPhone, iPad e Mac che costruisce il piano di studio dagli esami, dai libri e dalle ore che hai, e ti dice cosa studiare oggi. Gratis per un esame.">
+<link rel="canonical" href="https://nicolomarinangeli.github.io/syllabusplanner/">
+<link rel="alternate" hreflang="it" href="https://nicolomarinangeli.github.io/syllabusplanner/">
+<link rel="alternate" hreflang="en" href="https://nicolomarinangeli.github.io/syllabusplanner/en/">
+<link rel="alternate" hreflang="x-default" href="https://nicolomarinangeli.github.io/syllabusplanner/en/">
+<meta property="og:title" content="Syllabus Planner — piano di studio per gli esami">
+<meta property="og:description" content="Dici esami, libri e ore a settimana: l'app ti dice cosa studiare oggi e rifà il piano quando salti un giorno.">
+<meta property="og:url" content="https://nicolomarinangeli.github.io/syllabusplanner/">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="it_IT">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "name": "Syllabus Planner",
+      "alternateName": ["SyllabusPlanner", "Esami Università IA - Syllabus", "Study Planner AI - Syllabus"],
+      "description": "App per iPhone, iPad e Mac che costruisce il piano di studio a ritroso dalle date degli esami universitari, dice cosa studiare ogni giorno e rifà il piano quando si salta un giorno. Ha un tutor IA che interroga sugli appunti.",
+      "applicationCategory": "EducationalApplication",
+      "operatingSystem": "iOS 17 o successivo, iPadOS, macOS",
+      "inLanguage": ["it", "en", "fr", "de", "es"],
+      "url": "https://nicolomarinangeli.github.io/syllabusplanner/",
+      "downloadUrl": "https://apps.apple.com/app/id6805177869",
+      "author": {"@type": "Person", "name": "Nicolò Marinangeli"},
+      "offers": [
+        {"@type": "Offer", "name": "Gratis per un esame", "price": "0", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Semestrale", "price": "9.99", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Annuale", "price": "14.99", "priceCurrency": "EUR"},
+        {"@type": "Offer", "name": "Per sempre", "price": "39.99", "priceCurrency": "EUR"}
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {"@type": "Question", "name": "Che app uso per organizzare lo studio per gli esami dell'università?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Syllabus Planner, per iPhone, iPad e Mac, è fatta per questo: inserisci gli esami, i libri o i capitoli e le ore che hai a settimana, e l'app costruisce il piano a ritroso dalle date d'appello. Ogni giorno ti dice quali pagine studiare, di quale materia e per quanto tempo."}},
+        {"@type": "Question", "name": "Cosa succede se salto un giorno di studio?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Il piano si rifà da solo sui giorni che restano. Se sei indietro, l'app te lo dice e propone tre strade: spalmare il ritardo su tutti i giorni rimasti, recuperarlo nei prossimi giorni, o lasciare le giornate come sono. Per ognuna mostra i numeri di prima e di dopo."}},
+        {"@type": "Question", "name": "Quanto costa Syllabus Planner?",
+         "acceptedAnswer": {"@type": "Answer", "text": "È gratis per un esame. Per più esami il piano completo costa, sull'App Store italiano, 9,99 € a semestre, 14,99 € all'anno con la prima settimana gratis, oppure 39,99 € una volta sola, per sempre. Niente pubblicità."}},
+        {"@type": "Question", "name": "Posso caricare il programma del corso invece di scriverlo a mano?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Sì. Da una foto o da un PDF del syllabus l'app riconosce materie, date d'appello, CFU e capitoli, e te li fa confermare uno per uno. La lettura avviene sul dispositivo: il documento non viene inviato a nessun server."}},
+        {"@type": "Question", "name": "Come funziona il tutor IA?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ti interroga sugli appunti del quaderno e ti dà il voto, o ti spiega un argomento. Sui dispositivi con Apple Intelligence usa il modello di Apple sul dispositivo, senza chiavi. In alternativa puoi collegare un servizio di IA con una tua chiave. Le modifiche al piano che propone le applichi tu."}},
+        {"@type": "Question", "name": "Dove finiscono i miei dati?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Sul tuo dispositivo e nel tuo iCloud, per sincronizzare iPhone, iPad e Mac. Non c'è un account da creare, non c'è un server dello sviluppatore, non c'è tracciamento."}},
+        {"@type": "Question", "name": "In che lingue è disponibile?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Italiano, inglese, francese, tedesco e spagnolo."}}
+      ]
+    }
+  ]
+}
+</script>
 <style>
-  :root { color-scheme: light dark; }
+  :root { color-scheme: light dark; --testo: #26231f; --fondo: #faf7f2; --riga: #e6dfd4; }
+  @media (prefers-color-scheme: dark) { :root { --testo: #ece7e0; --fondo: #17150f; --riga: #34302a; } }
   body {
     font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     max-width: 42rem; margin: 0 auto; padding: 4rem 1.4rem 5rem;
-    color: #26231f; background: #faf7f2;
+    color: var(--testo); background: var(--fondo);
   }
-  @media (prefers-color-scheme: dark) { body { color: #ece7e0; background: #17150f; } }
-  h1 { font-size: 2rem; margin-bottom: .2rem; }
-  .meta { opacity: .6; font-size: .95rem; margin-top: 0; }
-  .lead { font-size: 1.05rem; margin-top: 2rem; }
+  h1 { font-size: 2rem; line-height: 1.2; margin-bottom: .3rem; }
+  h2 { font-size: 1.25rem; margin-top: 2.8rem; }
+  h3 { font-size: 1.02rem; margin: 1.6rem 0 .3rem; }
+  .meta { opacity: .65; font-size: .95rem; margin-top: 0; }
+  .lead { font-size: 1.08rem; margin-top: 1.8rem; }
+  ol, ul { padding-left: 1.3rem; }
+  li { margin-bottom: .45rem; }
+  table { border-collapse: collapse; width: 100%; margin-top: .6rem; }
+  td, th { text-align: left; padding: .5rem .4rem; border-bottom: 1px solid var(--riga); vertical-align: top; }
+  th { font-weight: 600; }
+  .scarica { display: inline-block; margin-top: 1.6rem; padding: .75rem 1.3rem; border-radius: 999px;
+    background: var(--testo); color: var(--fondo); text-decoration: none; font-weight: 600; }
+  .piccolo { font-size: .9rem; opacity: .7; }
   ul.links { list-style: none; padding: 0; margin-top: 2.5rem; }
-  ul.links li { margin-bottom: .9rem; }
-  ul.links a { font-size: 1.05rem; }
-  .scarica { display: inline-block; margin-top: 1.8rem; padding: .75rem 1.3rem; border-radius: 999px;
-    background: #26231f; color: #faf7f2; text-decoration: none; font-weight: 600; }
-  @media (prefers-color-scheme: dark) { .scarica { background: #ece7e0; color: #17150f; } }
-  footer { margin-top: 4rem; opacity: .6; font-size: .9rem; }
+  footer { margin-top: 4rem; opacity: .65; font-size: .9rem; }
 </style>
 </head>
 <body>
+<main>
 
-<h1>SyllabusPlanner</h1>
-<p class="meta">Gli esami che hai, il tempo che hai, e cosa studiare oggi.</p>
+<h1>Syllabus Planner</h1>
+<p class="meta">Il piano di studio per gli esami dell'università · iPhone, iPad e Mac · <a href="en/" hreflang="en">English</a></p>
 
-<p class="lead">Dici quali esami devi dare, con quali libri e quanto tempo hai a
-settimana. L'app costruisce il piano lavorando a ritroso dalle date d'appello e
-lo rifà da sola quando salti un giorno o vai più veloce del previsto. Non c'è un
-account e non c'è un server: esami, materiali, piano e sessioni stanno sul tuo
-telefono.</p>
+<p class="lead"><strong>Syllabus Planner è un'app per iPhone, iPad e Mac che costruisce il piano
+di studio per gli esami universitari e ti dice cosa studiare oggi.</strong> Inserisci gli esami,
+i libri o i capitoli e le ore che hai a settimana: l'app lavora a ritroso dalle date d'appello e
+divide il materiale in giornate. Se salti un giorno o vai più veloce del previsto, il piano si
+rifà da solo. È gratis per un esame.</p>
 
 <a class="scarica" href="https://apps.apple.com/app/apple-store/id6805177869?pt=129348976&amp;ct=sito&amp;mt=8">Scarica sull'App Store</a>
+
+<h2>Come funziona</h2>
+<ol>
+  <li><strong>Inserisci gli esami.</strong> A mano, oppure da una foto o da un PDF del programma del corso: l'app riconosce materie, date d'appello, CFU e capitoli e te li fa confermare.</li>
+  <li><strong>Dici quanto tempo hai.</strong> Le ore a settimana, e se vuoi l'orario delle lezioni: lo studio si sposta attorno.</li>
+  <li><strong>Ogni giorno sai cosa fare.</strong> La schermata di oggi dice quali pagine studiare, di quale materia, per quanto tempo.</li>
+  <li><strong>Il piano si adatta.</strong> Il timer Focus registra i minuti veri, e l'app impara il tuo ritmo invece di fidarsi delle stime iniziali.</li>
+</ol>
+
+<h2>Cosa fa</h2>
+<ul>
+  <li><strong>Piano a ritroso dalle date d'appello</strong>, pagina per pagina, ricalcolato quando cambia qualcosa.</li>
+  <li><strong>Quando sei indietro te lo dice</strong> e ti dà tre modi per rientrare, con i numeri di prima e di dopo.</li>
+  <li><strong>Tutor IA</strong> che ti interroga sugli appunti e ti dà il voto, o ti spiega un argomento.</li>
+  <li><strong>Ripassi a intervalli</strong> dopo 1, 3, 7 e 14 giorni e una <strong>simulazione d'esame</strong> qualche giorno prima.</li>
+  <li><strong>Timer Focus</strong> a cicli di 25 e 5 minuti, anche sulla schermata di blocco.</li>
+  <li><strong>Calendario e conto alla rovescia</strong> per ogni esame.</li>
+  <li><strong>Stesso piano su iPhone, iPad e Mac</strong>, sincronizzato con il tuo iCloud.</li>
+</ul>
+
+<h2>Per chi è</h2>
+<p>Per chi studia all'università e ha più esami nella stessa sessione, con libri e capitoli da
+dividere in giorni. Funziona anche per esami di Stato, concorsi e certificazioni: basta una data e
+il materiale da studiare.</p>
+
+<h2>Prezzi</h2>
+<table>
+  <tr><th>Piano</th><th>Prezzo</th><th>Cosa comprende</th></tr>
+  <tr><td>Gratis</td><td>0 €</td><td>Un esame, con il suo piano</td></tr>
+  <tr><td>Semestrale</td><td>9,99 €</td><td>Esami illimitati per sei mesi</td></tr>
+  <tr><td>Annuale</td><td>14,99 €</td><td>Esami illimitati per un anno, prima settimana gratis</td></tr>
+  <tr><td>Per sempre</td><td>39,99 €</td><td>Un pagamento solo, niente rinnovi</td></tr>
+</table>
+<p class="piccolo">Prezzi dell'App Store italiano al 23 novembre 2026. Negli altri paesi l'App Store mostra il prezzo locale.</p>
+
+<h2>Privacy</h2>
+<p>Esami, materiale e ore studiate stanno sul tuo dispositivo e nel tuo iCloud. Non c'è un account
+da creare, non c'è un server dello sviluppatore, non c'è pubblicità e non c'è tracciamento.
+Dettagli nell'<a href="privacy/">informativa sulla privacy</a>.</p>
+
+<h2>Domande frequenti</h2>
+
+<h3>Che app uso per organizzare lo studio per gli esami dell'università?</h3>
+<p>Syllabus Planner, per iPhone, iPad e Mac, è fatta per questo: inserisci gli esami, i libri o i
+capitoli e le ore che hai a settimana, e l'app costruisce il piano a ritroso dalle date d'appello.
+Ogni giorno ti dice quali pagine studiare, di quale materia e per quanto tempo.</p>
+
+<h3>Cosa succede se salto un giorno di studio?</h3>
+<p>Il piano si rifà da solo sui giorni che restano. Se sei indietro, l'app te lo dice e propone tre
+strade: spalmare il ritardo su tutti i giorni rimasti, recuperarlo nei prossimi giorni, o lasciare le
+giornate come sono. Per ognuna mostra i numeri di prima e di dopo.</p>
+
+<h3>Quanto costa Syllabus Planner?</h3>
+<p>È gratis per un esame. Per più esami il piano completo costa, sull'App Store italiano, 9,99 € a
+semestre, 14,99 € all'anno con la prima settimana gratis, oppure 39,99 € una volta sola, per sempre.
+Niente pubblicità.</p>
+
+<h3>Posso caricare il programma del corso invece di scriverlo a mano?</h3>
+<p>Sì. Da una foto o da un PDF del syllabus l'app riconosce materie, date d'appello, CFU e capitoli,
+e te li fa confermare uno per uno. La lettura avviene sul dispositivo: il documento non viene inviato
+a nessun server.</p>
+
+<h3>Come funziona il tutor IA?</h3>
+<p>Ti interroga sugli appunti del quaderno e ti dà il voto, o ti spiega un argomento. Sui dispositivi
+con Apple Intelligence usa il modello di Apple sul dispositivo, senza chiavi. In alternativa puoi
+collegare un servizio di IA con una tua chiave. Le modifiche al piano che propone le applichi tu.</p>
+
+<h3>Dove finiscono i miei dati?</h3>
+<p>Sul tuo dispositivo e nel tuo iCloud, per sincronizzare iPhone, iPad e Mac. Non c'è un account da
+creare, non c'è un server dello sviluppatore, non c'è tracciamento.</p>
+
+<h3>In che lingue è disponibile?</h3>
+<p>Italiano, inglese, francese, tedesco e spagnolo.</p>
 
 <ul class="links">
   <li><a href="privacy/">Informativa sulla privacy</a></li>
   <li><a href="supporto/">Supporto</a></li>
 </ul>
 
-<footer>Nicolò Marinangeli · <a href="mailto:nicolom.dev.supporto@gmail.com">nicolom.dev.supporto@gmail.com</a></footer>
-
+</main>
+<footer>
+  <p>Nicolò Marinangeli, sviluppatore indipendente · <a href="mailto:nicolom.dev.supporto@gmail.com">nicolom.dev.supporto@gmail.com</a></p>
+  <p>Aggiornato il 23 novembre 2026.</p>
+</footer>
 </body>
 </html>
